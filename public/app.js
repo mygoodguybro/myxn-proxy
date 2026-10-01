@@ -665,15 +665,17 @@ function sendChatMessage(windowId) {
 }
 
 function renderTaskbar() {
-  const taskbar = document.getElementById('taskbar');
-  taskbar.innerHTML = `
-    <div style="display: flex; gap: 8px;">
-      <button onclick="createWindow('browser', 'Browser', '🌐')" class="taskbar-btn">🌐 Browser</button>
-      <button onclick="createWindow('games', 'Games', '🎮')" class="taskbar-btn">🎮 Games</button>
-      <button onclick="createWindow('apps', 'Apps', '📦')" class="taskbar-btn">📦 Apps</button>
-      <button onclick="createWindow('chat', 'Chat', '💬')" class="taskbar-btn">💬 Chat</button>
-      <button onclick="createWindow('settings', 'Settings', '⚙️')" class="taskbar-btn">⚙️ Settings</button>
-    </div>
+  const taskbarApps = document.getElementById("taskbar-apps");
+  if (!taskbarApps) return;
+  const taskbarApps = document.getElementById('taskbar-apps');
+  if (!taskbarApps) return;
+  
+  taskbarApps.innerHTML = `
+    <button onclick="createWindow('browser', 'Browser', '🌐')" class="taskbar-btn">🌐 Browser</button>
+    <button onclick="createWindow('games', 'Games', '🎮')" class="taskbar-btn">🎮 Games</button>
+    <button onclick="createWindow('apps', 'Apps', '📦')" class="taskbar-btn">📦 Apps</button>
+    <button onclick="createWindow('chat', 'Chat', '💬')" class="taskbar-btn">💬 Chat</button>
+    <button onclick="createWindow('settings', 'Settings', '⚙️')" class="taskbar-btn">⚙️ Settings</button>
   `;
 }
 
